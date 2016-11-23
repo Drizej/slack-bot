@@ -108,7 +108,7 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 
 // Shakespeare response
 slapp.message('\(shakespeare)\i', ['mention', 'direct_message'], (msg) => {
-  msg.say(Shakespeare[0].acts[0].scenes[0].lines[235]);
+  msg.say(Shakespeare.plays[0].acts[0].scenes[0].lines[235]);
   msg.say(`The Shakes: \`\`\`${JSON.stringify(Shakespeare.getPlay())}\`\`\``)
 })
 
