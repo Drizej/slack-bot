@@ -1,17 +1,28 @@
-var Plays = [
+const request = require('request')
+
+var Shakespeare = [
   {
-    title:"All's Well That Ends Well",
-    acts:[
-      {
-        title:"Act I",
-        scenes: [
-          {
-            title:"SCENE II. Paris. The KING's palace.",
-            lines:[]
-          }
-        ]
-      }
-    ]
+    getPlay: function() {
+      request('http://www.opensourceshakespeare.org/views/plays/play_view.php?WorkID=allswell&Act=1&Scene=2&Scope=scene&displaytype=print', function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+          return body; // return the web page.
+        }
+      });
+    },
+    plays: {
+      title:"All's Well That Ends Well",
+      acts:[
+        {
+          title:"Act I",
+          scenes: [
+            {
+              title:"SCENE II. Paris. The KING's palace.",
+              lines:[]
+            }
+          ]
+        }
+      ]
+    }
   }
 ];
 
@@ -20,4 +31,4 @@ Plays[0].acts[0].scenes[0].lines[236] = "Have fought with equal fortune and cont
 Plays[0].acts[0].scenes[0].lines[237] = "A braving war.";
 Plays[0].acts[0].scenes[0].lines[238] = "*First Lord.* So 'tis reported, sir.";
 
-module.exports = Plays;
+module.exports = Shakespeare;
