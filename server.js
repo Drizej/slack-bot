@@ -108,12 +108,11 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 
 // Shakespeare response
 slapp.message('shakespeare', ['mention', 'direct_message'], (msg) => {
-  console.log('Shakespeare triggered');
   var playObj = {};
   playObj = Shakespeare.getRandomSnip();
   console.log(playObj);
-  msg.say(playObj.playline);
-  msg.say(playObj.lineStr);
+  //msg.say(playObj.play);
+  //msg.say(playObj.lines);
 })
 
 

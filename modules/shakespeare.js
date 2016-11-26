@@ -3,6 +3,7 @@ const playFolder = './plays/';
 
 var Shakespeare = {
   getRandomSnip: function() {
+    console.log('getRandomSnip function triggered');
     // Returns a random integer between min (included) and max (excluded)
     // Using Math.round() will give you a non-uniform distribution!
     function getRandomInt(min, max) {
@@ -14,10 +15,10 @@ var Shakespeare = {
     fs.readdir(playFolder, (err, files) => {
 
       var numberOfPlays = files.length;
-      //console.log(numberOfPlays);
+      console.log("playcount: "+numberOfPlays);
 
       var playID = getRandomInt(0,numberOfPlays);
-      //console.log(playID);
+      console.log("chosen play: "+playID);
 
       console.log('Reading '+files[playID]+'...');
       while (!files[playID].includes('.json')) {
@@ -31,7 +32,7 @@ var Shakespeare = {
         }
         //console.log(data);
         var playObj = JSON.parse(data);
-        //console.log(playObj.title);
+        console.log("Play title: "+playObj.title);
 
         var sceneCount = playObj.scenes.length;
         //console.log(sceneCount);
@@ -54,7 +55,7 @@ var Shakespeare = {
           }
 
           retObj = {
-            playline:playLine,
+            play:playLine,
             lines: lineStr
           }
 
