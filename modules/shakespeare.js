@@ -54,8 +54,8 @@ var Shakespeare = {
           }
 
           retObj = {
-            playline:playLine;
-            lines: lineStr);
+            playline:playLine,
+            lines: lineStr
           }
 
           return retObj;
