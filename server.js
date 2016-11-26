@@ -4,7 +4,7 @@ const express = require('express')
 const Slapp = require('slapp')
 const ConvoStore = require('slapp-convo-beepboop')
 const Context = require('slapp-context-beepboop')
-const Shakespeare = require('./store/shakespeare')
+const Shakespeare = require('./modules/shakespeare.js')
 
 // use `PORT` env var on Beep Boop - default to 3000 locally
 var port = process.env.PORT || 3000
@@ -108,8 +108,9 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 
 // Shakespeare response
 slapp.message('shakespeare', ['mention', 'direct_message'], (msg) => {
-  msg.say(Shakespeare.plays[0].acts[0].scenes[0].lines[235]);
-  msg.say(`The Shakes: \`\`\`${JSON.stringify(Shakespeare.getPlay())}\`\`\``)
+  playObj = Shakespeare.getRandomSnip();
+  msg.say(playObj.playline);
+  msg.say(playObj.lineStr);
 })
 
 
