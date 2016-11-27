@@ -3,7 +3,7 @@ const path = require('path');
 const playFolder = __dirname+'/plays/';
 
 var Shakespeare = {
-  getRandomSnip: function() {
+  getRandomSnip: function(msg) {
     console.log('getRandomSnip function triggered');
     // Returns a random integer between min (included) and max (excluded)
     // Using Math.round() will give you a non-uniform distribution!
@@ -64,7 +64,8 @@ var Shakespeare = {
             lines: lineStr
           }
           console.log('Return object in function: '+retObj);
-          return retObj;
+          msg.say(retObj.play);
+          msg.say(retObj.lines);
 
         }
 
