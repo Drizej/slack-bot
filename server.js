@@ -109,10 +109,7 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 
 // Shakespeare response
 slapp.message(/shakespeare/i, ['mention', 'direct_message'], (msg) => {
-  var playObj = {};
-  playObj = Shakespeare.getRandomSnip(msg);
-  console.log('Return object at top level: '+playObj);
-
+  Shakespeare.getRandomSnip(msg);
 })
 
 
