@@ -59,13 +59,8 @@ var Shakespeare = {
             lineStr += playObj.scenes[sceneID].lines[lineStart+i];
           }
 
-          retObj = {
-            play:playLine,
-            lines: lineStr
-          }
-          console.log('Return object in function: '+retObj);
-          msg.say(retObj.play);
-          msg.say(retObj.lines);
+          console.log(playLine+'\n'+lineStr);
+          msg.say(playLine+'\n'+lineStr);
 
         }
 
