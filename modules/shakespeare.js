@@ -13,6 +13,9 @@ var Shakespeare = {
     }
 
     fs.readdir(playFolder, (err, files) => {
+      if (err) {
+        return console.log(err);
+      }
 
       var numberOfPlays = files.length;
       console.log("playcount: "+numberOfPlays);
