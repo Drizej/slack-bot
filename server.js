@@ -118,7 +118,7 @@ slapp.message('shakespeare', ['mention', 'direct_message'], (msg) => {
 
 // directory message for exploring tree structure
 slapp.message('directory', ['mention', 'direct_message'], (msg) => {
-  console.log(msg);
+  //console.log(msg);
   console.log(Shakespeare.directories());
 })
 
