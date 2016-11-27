@@ -117,7 +117,7 @@ slapp.message('shakespeare', ['mention', 'direct_message'], (msg) => {
 })
 
 // directory message for exploring tree structure
-slapp.message('directory', ['mention', 'direct_message'], (msg) => {
+slapp.message(/^directory.*/i, ['mention', 'direct_message'], (msg) => {
   //console.log(msg);
   var text = (msg.body.event && msg.body.event.text) || '';
   var theSplit = text.split(' ');
