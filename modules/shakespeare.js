@@ -9,7 +9,7 @@ var Shakespeare = {
     });
   },
   directories: function(thePath) {
-    return this.getDirectories(path.resolve(thePath));
+    return this.getDirectories(path.resolve(__dirname,thePath));
   },
   getRandomSnip: function() {
     console.log('getRandomSnip function triggered');
