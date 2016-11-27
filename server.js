@@ -6,6 +6,7 @@ const ConvoStore = require('slapp-convo-beepboop')
 const Context = require('slapp-context-beepboop')
 const Shakespeare = require('./modules/shakespeare.js')
 
+
 // use `PORT` env var on Beep Boop - default to 3000 locally
 var port = process.env.PORT || 3000
 
@@ -113,6 +114,12 @@ slapp.message('shakespeare', ['mention', 'direct_message'], (msg) => {
   console.log(playObj);
   //msg.say(playObj.play);
   //msg.say(playObj.lines);
+})
+
+// directory message for exploring tree structure
+slapp.message('directory', ['mention', 'direct_message'], (msg) => {
+  console.log(msg);
+  console.log(Shakespeare.directories());
 })
 
 

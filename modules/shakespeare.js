@@ -1,7 +1,16 @@
 const fs = require('fs');
+const path = require('path');
 const playFolder = '/modules/plays/';
 
 var Shakespeare = {
+  getDirectories(srcpath) {
+    return fs.readdirSync(srcpath).filter(function(file) {
+      return fs.statSync(path.join(srcpath, file)).isDirectory();
+    });
+  },
+  directories: function() {
+    return getDirectories('/');
+  },
   getRandomSnip: function() {
     console.log('getRandomSnip function triggered');
     // Returns a random integer between min (included) and max (excluded)
