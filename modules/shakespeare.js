@@ -1,5 +1,5 @@
 const fs = require('fs');
-const playFolder = './plays/';
+const playFolder = '/modules/plays/';
 
 var Shakespeare = {
   getRandomSnip: function() {
