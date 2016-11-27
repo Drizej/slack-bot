@@ -112,8 +112,8 @@ slapp.message('shakespeare', ['mention', 'direct_message'], (msg) => {
   var playObj = {};
   playObj = Shakespeare.getRandomSnip();
   console.log('Return object at top level: '+playObj);
-  //msg.say(playObj.play);
-  //msg.say(playObj.lines);
+  msg.say(playObj.play);
+  msg.say(playObj.lines);
 })
 
 // directory message for exploring tree structure
