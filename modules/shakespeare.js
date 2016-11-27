@@ -45,7 +45,7 @@ var Shakespeare = {
         var sceneID = getRandomInt(0,sceneCount-1);
         //console.log(sceneID);
 
-        playLine = "From "+playObj.title+", "+playObj.scenes[sceneID].scene;
+        playLine = "From *"+playObj.title+"*, "+playObj.scenes[sceneID].scene;
         var lineCount = playObj.scenes[sceneID].lines.length;
 
         if(lineCount < 5) {
