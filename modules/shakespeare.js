@@ -3,13 +3,13 @@ const path = require('path');
 const playFolder = '/modules/plays/';
 
 var Shakespeare = {
-  getDirectories(srcpath) {
+  getDirectories: function(srcpath) {
     return fs.readdirSync(srcpath).filter(function(file) {
       return fs.statSync(path.join(srcpath, file)).isDirectory();
     });
   },
-  directories: function() {
-    return this.getDirectories(path.resolve('./modules/plays/'));
+  directories: function(thePath) {
+    return this.getDirectories(path.resolve(thePath));
   },
   getRandomSnip: function() {
     console.log('getRandomSnip function triggered');
