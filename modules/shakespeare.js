@@ -1,12 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-const playFolder = '/modules/plays/';
+const playFolder = __dirname+'/plays/';
 
 var Shakespeare = {
   getDirectories: function(srcpath) {
-    return fs.readdirSync(srcpath).filter(function(file) {
-      return fs.statSync(path.join(srcpath, file)).isDirectory();
-    });
+    return fs.readdirSync(srcpath);
   },
   directories: function(thePath) {
     return this.getDirectories(path.resolve(__dirname,thePath));
@@ -25,6 +23,7 @@ var Shakespeare = {
       if (err) {
         return console.log(err);
       }
+      console.log(playFolder);
 
       var numberOfPlays = files.length;
       console.log("playcount: "+numberOfPlays);
