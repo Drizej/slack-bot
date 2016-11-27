@@ -3,12 +3,6 @@ const path = require('path');
 const playFolder = __dirname+'/plays/';
 
 var Shakespeare = {
-  getDirectories: function(srcpath) {
-    return fs.readdirSync(srcpath);
-  },
-  directories: function(thePath) {
-    return this.getDirectories(path.resolve(__dirname,thePath));
-  },
   getRandomSnip: function() {
     console.log('getRandomSnip function triggered');
     // Returns a random integer between min (included) and max (excluded)
@@ -69,7 +63,7 @@ var Shakespeare = {
             play:playLine,
             lines: lineStr
           }
-
+          console.log('Return object in function: '+retObj);
           return retObj;
 
         }

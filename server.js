@@ -111,7 +111,7 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 slapp.message('shakespeare', ['mention', 'direct_message'], (msg) => {
   var playObj = {};
   playObj = Shakespeare.getRandomSnip();
-  console.log(playObj);
+  console.log('Return object at top level: '+playObj);
   //msg.say(playObj.play);
   //msg.say(playObj.lines);
 })
@@ -122,7 +122,7 @@ slapp.message(/^directory.*/i, ['mention', 'direct_message'], (msg) => {
   var text = (msg.body.event && msg.body.event.text) || '';
   var theSplit = text.split(' ');
   console.log(theSplit[1]);
-  
+
   var response = Shakespeare.directories(theSplit[1]);
   msg.say(`Here's what you've told me so far: \`\`\`${JSON.stringify(response)}\`\`\``)
   console.log(Shakespeare.directories(response));
