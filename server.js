@@ -121,6 +121,7 @@ slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
   if (Math.random() < 0.4) {
     msg.say([':fallen_leaf:', ':unicorn_face:', ':herb:'])
   }
+  console.log('fallback message received');
 })
 
 // attach Slapp to express server
