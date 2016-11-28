@@ -17,6 +17,8 @@ var slapp = Slapp({
   context: Context()
 })
 
+require('beepboop-slapp-presence-polyfill')(slapp)
+
 
 var HELP_TEXT = `
 I will respond to the following messages:
