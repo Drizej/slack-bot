@@ -110,7 +110,7 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 })
 
 // Shakespeare response
-slapp.message(/shakespeare/i, ['mention', 'direct_message'], (msg) => {
+slapp.message(/shakespeare/i, ['mention','direct_mention','direct_message'], (msg) => {
   Shakespeare.getRandomSnip(msg);
 })
 
