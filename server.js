@@ -28,6 +28,13 @@ I will respond to the following messages:
 \`<type-any-other-text>\` - to demonstrate a random emoticon response, some of the time :wink:.
 \`attachment\` - to see a Slack attachment message.
 `
+//*********************************************
+// Console all messages
+//*********************************************
+slapp.use((msg, next) => {
+  console.log('Incoming Message: 'msg)
+  next()
+})
 
 //*********************************************
 // Setup different handlers for messages
