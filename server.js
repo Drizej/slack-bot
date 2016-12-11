@@ -32,7 +32,7 @@ I will respond to the following messages:
 // Console all messages
 //*********************************************
 slapp.use((msg, next) => {
-  console.log('Incoming Message: 'msg)
+  console.log('Incoming Message: '+msg)
   next()
 })
 
