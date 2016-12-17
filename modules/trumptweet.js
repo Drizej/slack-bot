@@ -21,7 +21,7 @@ var TrumpTweets = {
 
         if(lines.length >= +line_no){
           stream.destroy();
-          callback(null, msg.say(lines[+line_no]));
+          callback(null, msg.say(':trump_: 'lines[+line_no]));
         }
       });
 
