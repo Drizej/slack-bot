@@ -5,7 +5,7 @@ const Slapp = require('slapp')
 const ConvoStore = require('slapp-convo-beepboop')
 const Context = require('slapp-context-beepboop')
 const Shakespeare = require('./modules/shakespeare.js')
-
+const TrumpTweets = require('./modules/trumptweet.js')
 
 // use `PORT` env var on Beep Boop - default to 3000 locally
 var port = process.env.PORT || 3000
@@ -121,6 +121,10 @@ slapp.message(/shakespeare/i, ['mention','direct_mention','direct_message'], (ms
   Shakespeare.getRandomSnip(msg);
 })
 
+// Trump response
+slapp.message(/trump/i, ['mention','direct_mention','direct_message','ambient'], (msg) => {
+  TrumpTweets.getRandomSnip(msg);
+})
 
 // Catch-all for any other responses not handled above
 slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
